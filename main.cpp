@@ -62,7 +62,7 @@ void cargarElementos()
 
 void mostrarInformacion()
 {
-    textprintf(screen, font, 5, ALTO_PANTALLA-20, makecol(255,255,255), "Vidas: %d Puntuación: %d", juego->getVidas(), juego->getPuntuacion());
+    textprintf_ex(screen, font, 5, ALTO_PANTALLA-20, makecol(255,255,255), 1, "Vidas: %d Puntuación: %d", juego->getVidas(), juego->getPuntuacion());
 }
 
 void dibujar()
@@ -283,7 +283,7 @@ void IncFps() { fps++; }
 int main(){
 	srand(time(NULL));
     hardware = new Hardware(ANCHO_PANTALLA,ALTO_PANTALLA);
-    textout(screen, font, "Programado por Ángel Luis.Pulse cualquier tecla",ANCHO_PANTALLA/2-170, ALTO_PANTALLA/2, makecol(150,150,255));
+    textout_ex(screen, font, "Programado por Ángel Luis.Pulse cualquier tecla",ANCHO_PANTALLA/2-170, ALTO_PANTALLA/2, makecol(150,150,255), 1);
     hardware->esperarTecla();
     juego = new Juego(3);
     cargarElementos();
@@ -307,12 +307,12 @@ int main(){
     clear_keybuf();
     if (enemigos != 0)
     {
-        textout(screen, font, "Te han matado :( Juego terminado. Pulsa cualquier tecla para salir",ANCHO_PANTALLA/2-230, ALTO_PANTALLA/2, makecol(150,150,255));
+        textout_ex(screen, font, "Te han matado :( Juego terminado. Pulsa cualquier tecla para salir",ANCHO_PANTALLA/2-230, ALTO_PANTALLA/2, makecol(150,150,255), 1);
         hardware->esperarTecla();
     }
     else
     {
-        textprintf(screen, font, ANCHO_PANTALLA/2-250, ALTO_PANTALLA/2, makecol(255,255,255), "Felicidades, mataste a todos! :) Tienes una puntuación de %d.", juego->getPuntuacion());
+        textprintf_ex(screen, font, ANCHO_PANTALLA/2-250, ALTO_PANTALLA/2, makecol(255,255,255), 1, "Felicidades, mataste a todos! :) Tienes una puntuación de %d.", juego->getPuntuacion());
         //textout(screen, font, "Felicidades, mataste a todos! :) Tienes una puntuación de. Pulsa cualquier tecla para salir",ANCHO_PANTALLA/2-230, ALTO_PANTALLA/2, makecol(150,150,255));
         hardware->esperarTecla();
     }
