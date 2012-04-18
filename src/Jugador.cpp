@@ -39,17 +39,10 @@ void Jugador::disparar()
 {
     if (disparos != MAX_DISPAROS)
     {
-        //std::cout << "max_disp: " << MAX_DISPAROS << std::endl;
         disparos++;
         int i = 0;
-        //std::cout << "Buscando sitio...\n";
-        while (disparo[i] != NULL)
-        {
-            i++;
-            //std::cout << i << std::endl;
-        }
+        while (disparo[i] != NULL) { i++; }
         disparo[i] = new Disparo(getX()+getImagen()->w/2, getY(), "./resource/disparo.bmp");
-        //std::cout << "He disparado " << disparos << " veces" << std::endl;
     }
 }
 

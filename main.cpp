@@ -6,6 +6,8 @@
 #include "include/Jugador.h"
 #include "include/Enemigo.h"
 #include "include/Disparo.h"
+#include <stdlib.h>
+#include <time.h>
 #include "iostream"
 #ifdef __cplusplus
     #include <cstdlib>
@@ -25,6 +27,25 @@ int direccion;
 bool actualizarY = false;
 volatile long fps = 0;
 int oldkeys[KEY_MAX];
+Disparo *disparosEnemigos[MAX_DISPAROS];
+
+void disparosDeEnemigos()
+{
+	int num;
+	for (int i = 0; i < 5; i++)
+	    {
+	        for (int j = 0; j < 10; j++)
+	        {
+	        	num=rand()%801; //Numero aleatorio entre 0 y 500
+	        	if ((num == i*j) and (enemigo[i][j] != NULL))
+	        	{
+	        		int k = 0;
+	        		while (disparosEnemigos[k] != NULL) k++;
+	        		disparosEnemigos[k] = enemigo[i][j]->disparar();
+	        	}
+	        }
+	    }
+}
 
 void cargarElementos()
 {
@@ -65,6 +86,13 @@ void dibujar()
             hardware->dibujarOculta(*jugador->disparo[i]);
         }
     }
+    for (int i = 0; i < MAX_DISPAROS; i++)
+    {
+    	if (disparosEnemigos[i] != NULL)
+    	{
+			hardware->dibujarOculta(*disparosEnemigos[i]);
+    	}
+    }
     hardware->visualizarOculta();
 }
 
@@ -76,8 +104,6 @@ void capturaTeclado()
         jugador->moverIzquierda(DESPLAZAMIENTO_IZQUIERDA);
     if (hardware->comprobarTecla(KEY_RIGHT))
         jugador->moverDerecha(DESPLAZAMIENTO_DERECHA);
-    //if (hardware->comprobarTecla(KEY_SPACE))
-      //  jugador->disparar();
     if (key[KEY_SPACE] && !oldkeys[KEY_SPACE])
         jugador->disparar();
     for (int i = 0 ; i < KEY_MAX ; ++i)
@@ -86,6 +112,7 @@ void capturaTeclado()
 
 void actualizarDisparos()
 {
+	//Actualizar los disparos del jugador
     for (int i = 0; i < MAX_DISPAROS; i++)
     {
         if (jugador->disparo[i] != NULL)
@@ -100,6 +127,20 @@ void actualizarDisparos()
             }
         }
     }
+    //Actualizar los disparos de los enemigos
+    for (int i = 0; i < MAX_DISPAROS; i++)
+        {
+            if (disparosEnemigos[i] != NULL)
+            {
+                disparosEnemigos[i]->actualizarPosicion(disparosEnemigos[i]->getX(), disparosEnemigos[i]->getY()+VELOCIDAD_DISPARO);
+                if (disparosEnemigos[i]->getY() > ALTO_PANTALLA)
+                {
+                    disparosEnemigos[i] = NULL;
+                    delete disparosEnemigos[i];
+                    //jugador->disparos--;
+                }
+            }
+        }
 }
 
 Enemigo* ultimoEnemigoDerecha()
@@ -196,6 +237,20 @@ void comprobarColisiones()
                 }
             }
         }
+        if (disparosEnemigos[i] != NULL)
+        {
+        	if (disparosEnemigos[i]->colisionCon(*jugador))
+        	{
+        		if(juego->getVidas() == 0)
+        			juego->setTerminado(true);
+        		else
+        		{
+					juego->setVidas(juego->getVidas()-1);
+					enemigos = 50;
+        		}
+        		cargarElementos();
+        	}
+        }
     }
 }
 
@@ -218,7 +273,6 @@ void comprobarFinJuego()
                     }
                     cargarElementos();
                 }
-                //std::cout << "Terminado: " << juego->isTerminado() << std::endl;
             }
         }
     }
@@ -227,6 +281,7 @@ void comprobarFinJuego()
 void IncFps() { fps++; }
 
 int main(){
+	srand(time(NULL));
     hardware = new Hardware(ANCHO_PANTALLA,ALTO_PANTALLA);
     textout(screen, font, "Programado por Ángel Luis.Pulse cualquier tecla",ANCHO_PANTALLA/2-170, ALTO_PANTALLA/2, makecol(150,150,255));
     hardware->esperarTecla();
@@ -238,6 +293,7 @@ int main(){
         LOCK_FUNCTION( IncFps );
         install_int_ex( IncFps, BPS_TO_TIMER(15) );
         capturaTeclado();
+        disparosDeEnemigos();
         moverEnemigos();
         actualizarDisparos();
         comprobarColisiones();

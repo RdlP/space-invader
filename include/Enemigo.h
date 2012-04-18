@@ -1,6 +1,7 @@
 #ifndef Enemigo_h
 #define Enemigo_h
 #include "ElementoGrafico.h"
+#include "Disparo.h"
 
 /**
 * Clase que representa a los enemigos.
@@ -43,6 +44,10 @@ class Enemigo: public ElementoGrafico
         * @param actualizarY Indica si se debe actualizar la posición Y de los enemigos.
         */
         void mover(int direccion, bool actualizarY);
+        /**
+         * Función de disparo de los enemigos.
+         */
+        Disparo* disparar();
         /**
         * Destructor de la clase.
         *
