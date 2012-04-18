@@ -6,6 +6,8 @@
 #include "include/Jugador.h"
 #include "include/Enemigo.h"
 #include "include/Disparo.h"
+#include "include/Alien.h"
+#include "include/Pulpo.h"
 #include <stdlib.h>
 #include <time.h>
 #include "iostream"
@@ -50,13 +52,17 @@ void disparosDeEnemigos()
 void cargarElementos()
 {
 	char imagenJugador[23]="./resource/jugador.bmp";
-	char imagenEnemigo[23]="./resource/enemigo.bmp";
+	char imagenAlien[23]="./resource/enemigo.bmp";
+	char imagenPulpo[24]="./resource/enemigo1.bmp";
     jugador = new Jugador(ANCHO_PANTALLA/2,ALTO_PANTALLA-75, imagenJugador);
     for (int i = 0; i < 5; i++)
     {
         for (int j = 0; j < 10; j++)
         {
-            enemigo[i][j] = new Enemigo(j*70, i*70, imagenEnemigo);
+        	if (i%2 == 0)
+        		enemigo[i][j] = new Pulpo(j*70, i*70, imagenPulpo);
+        	else
+        		enemigo[i][j] = new Alien(j*70, i*70, imagenAlien);
         }
     }
     direccion = 1;
