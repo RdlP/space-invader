@@ -23,5 +23,6 @@ void Enemigo::mover(int direccion, bool actualizarY)
 
 Disparo* Enemigo::disparar()
 {
-	return new Disparo(getX()+getImagen()->w/2, getY(), "./resource/disparo_enemigo.bmp");
+	char enemigoDisparo[31] = "./resource/disparo_enemigo.bmp";
+	return new Disparo(getX()+getImagen()->w/2, getY(), enemigoDisparo);
 }

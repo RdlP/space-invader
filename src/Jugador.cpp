@@ -37,12 +37,13 @@ void Jugador::moverIzquierda(int despX)
 
 void Jugador::disparar()
 {
+	char disparoJugador[23] = "./resource/disparo.bmp";
     if (disparos != MAX_DISPAROS)
     {
         disparos++;
         int i = 0;
         while (disparo[i] != NULL) { i++; }
-        disparo[i] = new Disparo(getX()+getImagen()->w/2, getY(), "./resource/disparo.bmp");
+        disparo[i] = new Disparo(getX()+getImagen()->w/2, getY(), disparoJugador);
     }
 }
 
