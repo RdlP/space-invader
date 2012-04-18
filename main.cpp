@@ -36,7 +36,7 @@ void disparosDeEnemigos()
 	    {
 	        for (int j = 0; j < 10; j++)
 	        {
-	        	num=rand()%801; //Numero aleatorio entre 0 y 500
+	        	num=rand()%(enemigos*20); //Numero aleatorio entre 0 y 500
 	        	if ((num == i*j) and (enemigo[i][j] != NULL))
 	        	{
 	        		int k = 0;
