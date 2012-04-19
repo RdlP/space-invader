@@ -1,0 +1,27 @@
+
+INTRODUCCIÓN
+
+Space Invader es uno de los primeros juegos que aparecieron.
+Este proyecto se basa en recrear dicho juego utilizando el
+lenguaje de programación C++ y las librerías gráficas allegro
+
+COMPILACIÓN
+
+Para compilar el proyecto hay que tener instaladas las librerías
+Allegro (liballegro4.2-dev para sistemas basados en Debian).
+A continuación hay que darle permisos de ejecución al fichero
+Makefile.sh:
+
+	chmod +x Makefile.sh
+
+Por último basta con ejecutar dicho fichero:
+
+	./Makefile.sh
+
+EJECUCIÓN
+
+Para ejecutar el juego, una vez compilado, basta con ejecutar
+el fichero space-invader que se encuentra en el directorio
+raiz del proyecto.
+
+Autor: Ángel Luis Perales Gómez
