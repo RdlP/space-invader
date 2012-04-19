@@ -66,7 +66,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
 </div>
 <div class="contents">
 <!-- doxytag: class="Enemigo" --><!-- doxytag: inherits="ElementoGrafico" -->
-<p>Clase que representa a los enemigos.  
+<p>Clase Abstracta que representa a los enemigos.  
  <a href="classEnemigo.html#details">Más...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Enemigo_8h_source.html">Enemigo.h</a>&gt;</code></p>
@@ -88,14 +88,16 @@ Métodos públicos</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor de la clase que inicializa a los enemigos.  <a href="#ac285bf9bfa40fabf5801be7c58b57930"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemigo.html#a55d93f461729b8fb6c6d99fce132c1da">mover</a> (int direccion, bool actualizarY)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Función para el movimiento de los Enemigos.  <a href="#a55d93f461729b8fb6c6d99fce132c1da"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4b360b105baab695ebb91b95db1698c0"></a><!-- doxytag: member="Enemigo::disparar" ref="a4b360b105baab695ebb91b95db1698c0" args="()" -->
-<a class="el" href="classDisparo.html">Disparo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemigo.html#a4b360b105baab695ebb91b95db1698c0">disparar</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5646dfce86d63c485e503b3508ea0868"></a><!-- doxytag: member="Enemigo::disparar" ref="a5646dfce86d63c485e503b3508ea0868" args="()" -->
+<a class="el" href="classDisparo.html">Disparo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemigo.html#a5646dfce86d63c485e503b3508ea0868">disparar</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Función de disparo de los enemigos. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemigo.html#ae1c66e168ed0c9d09c10d30135fbd5d4">~Enemigo</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor de la clase.  <a href="#ae1c66e168ed0c9d09c10d30135fbd5d4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1969a86057bd498a6d72c4ce67b27d9d"></a><!-- doxytag: member="Enemigo::getPuntuacion" ref="a1969a86057bd498a6d72c4ce67b27d9d" args="()=0" -->
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>getPuntuacion</b> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemigo.html#a6efd964988f37a45e974098a8f7e675e">~Enemigo</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor de la clase.  <a href="#a6efd964988f37a45e974098a8f7e675e"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Descripción detallada</h2>
-<div class="textblock"><p>Clase que representa a los enemigos. </p>
+<div class="textblock"><p>Clase Abstracta que representa a los enemigos. </p>
 <p>Esta clase representa a los enemigos controlados por la CPU y hereda de la clase <a class="el" href="classElementoGrafico.html" title="Clase que representa a un ElementoGráfico.">ElementoGrafico</a>.</p>
 <dl class="author"><dt><b>Autor:</b></dt><dd>Ángel Luis Perales Gómez </dd></dl>
 <dl class="version"><dt><b>Versión:</b></dt><dd>0.1.1 </dd></dl>
@@ -147,12 +149,12 @@ LICENCIA</h2>
 
 </div>
 </div>
-<a class="anchor" id="ae1c66e168ed0c9d09c10d30135fbd5d4"></a><!-- doxytag: member="Enemigo::~Enemigo" ref="ae1c66e168ed0c9d09c10d30135fbd5d4" args="()" -->
+<a class="anchor" id="a6efd964988f37a45e974098a8f7e675e"></a><!-- doxytag: member="Enemigo::~Enemigo" ref="a6efd964988f37a45e974098a8f7e675e" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual Enemigo::~Enemigo </td>
+          <td class="memname">Enemigo::~Enemigo </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [virtual]</code></td>
@@ -162,7 +164,7 @@ LICENCIA</h2>
 <div class="memdoc">
 
 <p>Destructor de la clase. </p>
-<p>Destructor de la clase <a class="el" href="classEnemigo.html" title="Clase que representa a los enemigos.">Enemigo</a>, se encarga de eleminar la imagen asociada al enemigo. </p>
+<p>Destructor de la clase <a class="el" href="classEnemigo.html" title="Clase Abstracta que representa a los enemigos.">Enemigo</a>, se encarga de eleminar la imagen asociada al enemigo. </p>
 
 </div>
 </div>
@@ -204,8 +206,9 @@ LICENCIA</h2>
 
 </div>
 </div>
-<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<hr/>La documentación para esta clase fue generada a partir de los siguientes ficheros:<ul>
 <li>include/<a class="el" href="Enemigo_8h_source.html">Enemigo.h</a></li>
+<li>src/Enemigo.cpp</li>
 </ul>
 </div>
 <!-- window showing the filter options -->
@@ -222,7 +225,7 @@ LICENCIA</h2>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generado el Miércoles, 18 de Abril de 2012 23:56:04 para Space Invader por&#160;
+<hr class="footer"/><address class="footer"><small>Generado el Jueves, 19 de Abril de 2012 19:06:52 para Space Invader por&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </small></address>
 </body>

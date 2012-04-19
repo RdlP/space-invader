@@ -4,7 +4,7 @@
 #include "Disparo.h"
 
 /**
-* Clase que representa a los enemigos.
+* Clase Abstracta que representa a los enemigos.
 *
 * Esta clase representa a los enemigos controlados
 * por la CPU y hereda de la clase ElementoGrafico.
@@ -49,9 +49,13 @@ class Enemigo: public ElementoGrafico
          */
         Disparo* disparar();
         /*
-         * Función para obtener la puntuación
+         * Función para obtener la puntuación.
          *
-         * @return Puntuación
+         * Función virtual pura (Abstracta) que es implementada
+         * en los subtipos para obtener la puntuación que le
+         * otorgan al jugador cuando son matados.
+         *
+         * @return Puntuación que le otorgan al jugador al ser matados.
          */
         virtual int getPuntuacion() = 0;
         /**

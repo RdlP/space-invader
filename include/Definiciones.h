@@ -64,9 +64,9 @@
 *
 * @date Abril de 2012
 *
-* @todo Más variedad de enemigos
+* @todo Más variedad de enemigos <b>HECHO</b>
 * @todo Más variedad de disparos
-* @todo Que los enemigos puedan atacar
+* @todo Que los enemigos puedan atacar <b>HECHO</b>
 * @todo Mostrar la puntuación en la pantalla del juego <b>HECHO</b>
 * @todo Mostrar el nivel en el que se encuentra en la pantalla del juego
 * @todo Añadir sonido al juego

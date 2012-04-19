@@ -77,7 +77,7 @@ Diagrama de herencias de ElementoGrafico</div>
   <img src="classElementoGrafico.png" usemap="#ElementoGrafico_map" alt=""/>
   <map id="ElementoGrafico_map" name="ElementoGrafico_map">
 <area href="classDisparo.html" title="Clase que representa al disparo del jugador." alt="Disparo" shape="rect" coords="0,56,105,80"/>
-<area href="classEnemigo.html" title="Clase que representa a los enemigos." alt="Enemigo" shape="rect" coords="115,56,220,80"/>
+<area href="classEnemigo.html" title="Clase Abstracta que representa a los enemigos." alt="Enemigo" shape="rect" coords="115,56,220,80"/>
 <area href="classJugador.html" title="Clase que representa al jugador." alt="Jugador" shape="rect" coords="230,56,335,80"/>
 <area href="classAlien.html" title="Clase que representa al enemigo de tipo Alien." alt="Alien" shape="rect" coords="57,112,162,136"/>
 <area href="classPulpo.html" title="Clase que representa al enemigo de tipo Pulpo." alt="Pulpo" shape="rect" coords="172,112,277,136"/>
@@ -90,8 +90,8 @@ Métodos públicos</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor para iniciañizar <a class="el" href="classElementoGrafico.html" title="Clase que representa a un ElementoGráfico.">ElementoGrafico</a>.  <a href="#aed5f7f7cc116e3d5f22ce3067c7d2d93"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classElementoGrafico.html#a9e4324aab00845b595c67456338730ac">actualizarPosicion</a> (int x, int y)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza la posición del <a class="el" href="classElementoGrafico.html" title="Clase que representa a un ElementoGráfico.">ElementoGrafico</a>.  <a href="#a9e4324aab00845b595c67456338730ac"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">BITMAP *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classElementoGrafico.html#a185d7326ae0d2c2ff1199e8691cd138e">getImagen</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Función que devuelve la imagen del <a class="el" href="classElementoGrafico.html" title="Clase que representa a un ElementoGráfico.">ElementoGrafico</a>.  <a href="#a185d7326ae0d2c2ff1199e8691cd138e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">BITMAP *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classElementoGrafico.html#afb1184f2a46e5467add8d5836b316a31">getImagen</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Función que devuelve la imagen del <a class="el" href="classElementoGrafico.html" title="Clase que representa a un ElementoGráfico.">ElementoGrafico</a>.  <a href="#afb1184f2a46e5467add8d5836b316a31"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classElementoGrafico.html#a59fa2763c4dc8b9960b91f0310d3c4e3">getX</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Función que devuelve la posición x.  <a href="#a59fa2763c4dc8b9960b91f0310d3c4e3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classElementoGrafico.html#aa8bcd5b5ab64fccb01e8c28499c7e3f3">getY</a> ()</td></tr>
@@ -339,12 +339,12 @@ LICENCIA</h2>
 
 </div>
 </div>
-<a class="anchor" id="a185d7326ae0d2c2ff1199e8691cd138e"></a><!-- doxytag: member="ElementoGrafico::getImagen" ref="a185d7326ae0d2c2ff1199e8691cd138e" args="()" -->
+<a class="anchor" id="afb1184f2a46e5467add8d5836b316a31"></a><!-- doxytag: member="ElementoGrafico::getImagen" ref="afb1184f2a46e5467add8d5836b316a31" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">BITMAP* ElementoGrafico::getImagen </td>
+          <td class="memname">BITMAP * ElementoGrafico::getImagen </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -396,8 +396,9 @@ LICENCIA</h2>
 
 </div>
 </div>
-<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<hr/>La documentación para esta clase fue generada a partir de los siguientes ficheros:<ul>
 <li>include/<a class="el" href="ElementoGrafico_8h_source.html">ElementoGrafico.h</a></li>
+<li>src/ElementoGrafico.cpp</li>
 </ul>
 </div>
 <!-- window showing the filter options -->
@@ -414,7 +415,7 @@ LICENCIA</h2>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generado el Miércoles, 18 de Abril de 2012 23:56:04 para Space Invader por&#160;
+<hr class="footer"/><address class="footer"><small>Generado el Jueves, 19 de Abril de 2012 19:06:52 para Space Invader por&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </small></address>
 </body>

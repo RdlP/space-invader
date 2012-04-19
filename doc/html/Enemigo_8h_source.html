@@ -64,18 +64,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
 <a name="l00003"></a>00003 <span class="preprocessor"></span><span class="preprocessor">#include &quot;ElementoGrafico.h&quot;</span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;Disparo.h&quot;</span>
 <a name="l00005"></a>00005 
-<a name="l00027"></a><a class="code" href="classEnemigo.html">00027</a> <span class="keyword">class </span><a class="code" href="classEnemigo.html" title="Clase que representa a los enemigos.">Enemigo</a>: <span class="keyword">public</span> <a class="code" href="classElementoGrafico.html" title="Clase que representa a un ElementoGráfico.">ElementoGrafico</a>
+<a name="l00027"></a><a class="code" href="classEnemigo.html">00027</a> <span class="keyword">class </span><a class="code" href="classEnemigo.html" title="Clase Abstracta que representa a los enemigos.">Enemigo</a>: <span class="keyword">public</span> <a class="code" href="classElementoGrafico.html" title="Clase que representa a un ElementoGráfico.">ElementoGrafico</a>
 <a name="l00028"></a>00028 {
 <a name="l00029"></a>00029     <span class="keyword">public</span>:
 <a name="l00037"></a>00037         <a class="code" href="classEnemigo.html#ac285bf9bfa40fabf5801be7c58b57930" title="Constructor de la clase que inicializa a los enemigos.">Enemigo</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">char</span> *nombre);
 <a name="l00046"></a>00046         <span class="keywordtype">void</span> <a class="code" href="classEnemigo.html#a55d93f461729b8fb6c6d99fce132c1da" title="Función para el movimiento de los Enemigos.">mover</a>(<span class="keywordtype">int</span> direccion, <span class="keywordtype">bool</span> actualizarY);
-<a name="l00050"></a>00050         <a class="code" href="classDisparo.html" title="Clase que representa al disparo del jugador.">Disparo</a>* <a class="code" href="classEnemigo.html#a4b360b105baab695ebb91b95db1698c0" title="Función de disparo de los enemigos.">disparar</a>();
-<a name="l00056"></a>00056         <span class="keyword">virtual</span> <a class="code" href="classEnemigo.html#ae1c66e168ed0c9d09c10d30135fbd5d4" title="Destructor de la clase.">~Enemigo</a>();
-<a name="l00057"></a>00057     <span class="keyword">protected</span>:
-<a name="l00058"></a>00058     <span class="keyword">private</span>:
-<a name="l00059"></a>00059 };
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061 <span class="preprocessor">#endif // Enemigo_h</span>
+<a name="l00050"></a>00050         <a class="code" href="classDisparo.html" title="Clase que representa al disparo del jugador.">Disparo</a>* <a class="code" href="classEnemigo.html#a5646dfce86d63c485e503b3508ea0868" title="Función de disparo de los enemigos.">disparar</a>();
+<a name="l00051"></a>00051         <span class="comment">/*</span>
+<a name="l00052"></a>00052 <span class="comment">         * Función para obtener la puntuación.</span>
+<a name="l00053"></a>00053 <span class="comment">         *</span>
+<a name="l00054"></a>00054 <span class="comment">         * Función virtual pura (Abstracta) que es implementada</span>
+<a name="l00055"></a>00055 <span class="comment">         * en los subtipos para obtener la puntuación que le</span>
+<a name="l00056"></a>00056 <span class="comment">         * otorgan al jugador cuando son matados.</span>
+<a name="l00057"></a>00057 <span class="comment">         *</span>
+<a name="l00058"></a>00058 <span class="comment">         * @return Puntuación que le otorgan al jugador al ser matados.</span>
+<a name="l00059"></a>00059 <span class="comment">         */</span>
+<a name="l00060"></a>00060         <span class="keyword">virtual</span> <span class="keywordtype">int</span> getPuntuacion() = 0;
+<a name="l00066"></a>00066         <span class="keyword">virtual</span> <a class="code" href="classEnemigo.html#a6efd964988f37a45e974098a8f7e675e" title="Destructor de la clase.">~Enemigo</a>();
+<a name="l00067"></a>00067     <span class="keyword">protected</span>:
+<a name="l00068"></a>00068     <span class="keyword">private</span>:
+<a name="l00069"></a>00069 };
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071 <span class="preprocessor">#endif // Enemigo_h</span>
 </pre></div></div>
 </div>
 <!-- window showing the filter options -->
@@ -92,7 +102,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generado el Miércoles, 18 de Abril de 2012 23:56:04 para Space Invader por&#160;
+<hr class="footer"/><address class="footer"><small>Generado el Jueves, 19 de Abril de 2012 19:06:52 para Space Invader por&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </small></address>
 </body>
