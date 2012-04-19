@@ -228,18 +228,17 @@ void comprobarColisiones()
                     {
                         if (jugador->disparo[i]->colisionCon(*enemigo[j][k]))
                         {
-
-                                enemigo[j][k]->eliminarGrafico(enemigo[j][k]->getImagen());
-                                jugador->disparo[i]->eliminarGrafico(jugador->disparo[i]->getImagen());
-                                enemigo[j][k] = NULL;
-                                jugador->disparo[i] = NULL;
-                                delete jugador->disparo[i];
-                                delete enemigo[j][k];
-                                jugador->disparos--;
-                                juego->incrementarPuntuacion(20);
-                                enemigos--;
-                                if (enemigos == 0)
-                                    juego->setTerminado(true);
+                        	juego->incrementarPuntuacion(enemigo[j][k]->getPuntuacion());
+                        	enemigo[j][k]->eliminarGrafico(enemigo[j][k]->getImagen());
+                            jugador->disparo[i]->eliminarGrafico(jugador->disparo[i]->getImagen());
+                            enemigo[j][k] = NULL;
+                            jugador->disparo[i] = NULL;
+                            delete jugador->disparo[i];
+                            delete enemigo[j][k];
+                            jugador->disparos--;
+                            enemigos--;
+                            if (enemigos == 0)
+                            	juego->setTerminado(true);
                         }
                     }
                 }
@@ -310,7 +309,6 @@ int main(){
         //hardware->pausa(VELOCIDAD_JUEGO);
         comprobarFinJuego();
     }
-    //std::cout << "HAS ACABADO EL JUEGO\n";
     clear_bitmap(screen);
     clear_keybuf();
     if (enemigos != 0)

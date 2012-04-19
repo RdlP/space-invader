@@ -5,7 +5,12 @@
 
 Alien::Alien(int x, int y, char *nombre) : Enemigo(x, y, nombre)
 {
+	this->puntuacion = 40;
+}
 
+int Alien::getPuntuacion()
+{
+	return this->puntuacion;
 }
 
 Alien::~Alien()

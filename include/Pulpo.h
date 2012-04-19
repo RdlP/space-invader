@@ -34,12 +34,19 @@ class Pulpo : public Enemigo
         */
         Pulpo(int x, int y, char *nombre);
         /**
+        * Función que devuelve la puntuación que se obtiene al matar a un Pulpo.
+        *
+        * @return Devuelve un entero indicando la puntuación por matar al tipo de enemigo Pulpo.
+        */
+        int getPuntuacion();
+        /**
         * Destructor de la clase Pulpo.
         * Destructor de la clase Pulpo que elimina la imagen asociada al Pulpo.
         */
         virtual ~Pulpo();
     protected:
     private:
+        int puntuacion;
 };
 
 #endif /* PULPO_H_ */

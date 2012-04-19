@@ -34,12 +34,19 @@ class Alien : public Enemigo
         */
         Alien(int x, int y, char *nombre);
         /**
+         * Función que devuelve la puntuación que se obtiene al matar a un Alien.
+         *
+         * @return Devuelve un entero indicando la puntuación por matar al tipo de enemigo Alien.
+         */
+        int getPuntuacion();
+        /**
         * Destructor de la clase Alien.
         * Destructor de la clase Alien que elimina la imagen asociada al Alien.
         */
         virtual ~Alien();
     protected:
     private:
+        int puntuacion;
 };
 
 #endif /* ALIEN_H_ */

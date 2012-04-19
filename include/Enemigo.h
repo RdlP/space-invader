@@ -48,6 +48,12 @@ class Enemigo: public ElementoGrafico
          * Función de disparo de los enemigos.
          */
         Disparo* disparar();
+        /*
+         * Función para obtener la puntuación
+         *
+         * @return Puntuación
+         */
+        virtual int getPuntuacion() = 0;
         /**
         * Destructor de la clase.
         *
